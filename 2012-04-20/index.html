@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>MoviePilot.com – Iteration: April 10th to 20th</title>
+
+    <meta charset='utf-8'>
+    <script src='assets/slides.js'></script>
+    <link rel="stylesheet" type="text/css" href="assets/styles.css" />
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+        
+        
+      
+      <article class='intro'>
+        <h1>MoviePilot.com – Iteration: April 10th to 20th</h1>
+        <br />
+        <p>
+          &bull;&nbsp;Improving KPIs (Key Performance Indicators)
+          <br>
+          &bull;&nbsp;Improving Facebook and incentives with split testing
+          <br>
+          &bull;&nbsp;Stream Stability and UI refactor
+        </p>
+      </article>
+      
+      <article class="smaller">
+        <h3>Moviepilot.com A/B Testing</h3>
+        <p>We changed the structure of A/B testing a bit so we can do more flexible testing.</p>
+
+        <p class="black">An anonymous user is now assigned randomly to several A/B testing groups:</p>
+
+        <ul>
+          <li><b class="green">groupHalf:</b> 50% / 50%</li>
+          <li><b class="yellow">groupThird:</b> 33% / 33% / 33%</li>
+          <li><b class="blue">groupQuarter:</b> 25% / 25% / 25% / 25%</li>
+        </ul>
+        <br />
+        <p>–> The fraction numbers <b>start at 0</b>.</p>
+        <p>–> <b>groupHalf == 0</b> means the user is in the <strong>1st</strong> 50/50 group.</p>
+        <p>–> <b>groupQuarter == 3</b> means the user is in the <strong>4th</strong> 25/25/25/25 group.</p>
+
+      </article>
+      
+      <article>
+        <h1>Login Window:<br />4 Groups</h1>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 1st group
+        </h3>
+        <p>
+          <img class='centered' style='height: 300px' src='assets/images/login1.png'>
+        </p>
+        <ul>
+          <li>Facepile</li>
+          <li>Facebook service is the strongest</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 2nd group
+        </h3>
+        <p>
+          <img class='centered' style='height: 300px' src='assets/images/login2.png'>
+        </p>
+        <ul>
+          <li>Facepile</li>
+          <li>All services w/ same strength</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 3rd group
+        </h3>
+        <p>
+          <img class='centered' style='height: 300px' src='assets/images/login3.png'>
+        </p>
+        <ul>
+          <li>Facepile</li>
+          <li>Facebook service is the strongest</li>
+          <li>Additional <span class="black">WHY'S</span> for users to sign-up</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 4th group
+        </h3>
+        <p>
+          <img class='centered' style='height: 250px' src='assets/images/login4.png'>
+        </p>
+        <ul>
+          <li><span class="blue">NO<span> Facepile</li>
+          <li>Conditioned by <u>guest header</u> <span class="green">WITH</span> Facepile.</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Conditions: I can see the Login when...
+        </h3>
+        <ul>
+          <li>
+            I click on the "Login" button at the top right
+          </li>
+          <li>
+            I try to "Follow" a Movie and I'm not logged in
+          </li>
+        </ul>
+        <br>
+        <h3>
+          Notes:
+        </h3>
+        <ul>
+          <li>
+            Four states, goal: achieve more Sign-ups
+          </li>
+          <li>
+            Conditionable by guest header
+          </li>
+        </ul>
+      </article>
+      
+      <article>
+        <h1>Guest Header:<br />2 Groups</h1>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 1st group
+        </h3>
+        <p>
+          <img class='centered' style='width: 100%' src='assets/images/guestheader1.png'>
+        </p>
+        <ul>
+          <li>3 reasons leading to sign-up</li>
+          <li>Facebook service is the strongest</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 2nd group
+        </h3>
+        <p>
+          <img class='centered' style='width: 100%' src='assets/images/guestheader2.png'>
+        </p>
+        <ul>
+          <li>Facepile</li>
+          <li>Strongly encourage the use of Facebook, clarifying "sign-up".</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Notes:
+        </h3>
+        <ul>
+          <li>
+            Available everywhere (this might change later) when user is <span class="blue">NOT</span> logged in.
+          </li>
+        </ul>
+      </article>
+      
+      <article>
+        <h1>Follow Movie Incentive:<br />2 Groups</h1>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 1st group
+        </h3>
+        <p>
+          <img class='centered' style='height: 290px' src='assets/images/incentive1.png'>
+        </p>
+        <ul>
+          <li><b class="green">Green</b> color for the call to action</li>
+          <li>Light (not darkish) grey to cancel</li>
+          <li><small>Buttons follow a Windows-like layout (left/right)</small></li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 2nd group
+        </h3>
+        <p>
+          <img class='centered' style='height: 290px' src='assets/images/incentive2.png'>
+        </p>
+        <ul>
+          <li><b class="green">Green</b> color for the call to action</li>
+          <li>Light (not darkish) grey to cancel</li>
+          <li><small>Buttons follow a Mac-like layout (right/left)</small></li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Conditions: I can see the Incentive when...
+        </h3>
+        <ul>
+          <li>
+            I land in a movie article from a link in the Facebook wall.
+          </li>
+          <li>
+            I land in the channel page for the first time with my current browser session (tab)
+          </li>
+        </ul>
+        <br />
+        <h5 class="blue">
+          We are preparing two more incentives with Facepile and Sign-up call to action here.
+        </h5>
+      </article>
+      
+      <article>
+        <h1>New Story and Stream UI</h1>
+      </article>
+      
+      <article>
+        <h3>
+          Stream now *always* contains 4 tabs
+        </h3>
+        <p>
+          <img class='centered' style='width: 100%' src='assets/images/article.png'>
+        </p>
+        <ul>
+          <li>The Movie tab is shown when the story relates at least to 1 Movie...</li>
+          <li>... And the Movie tab is linked to the first Movie belonging to the story...</li>
+          <li>... And it links to the Channel view with focus on that movie.</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h1>4 Testing Groups</h1>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 1st group
+        </h3>
+        <p>
+          <img class='centered' style='height: 152px' src='assets/images/header1.png'>
+        </p>
+        <ul>
+          <li>Unique call to action: Follow</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 2nd group
+        </h3>
+        <p>
+          <img class='centered' style='height: 152px' src='assets/images/header2.png'>
+        </p>
+        <ul>
+          <li>Unique call to action: Like this Movie</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 3rd group
+        </h3>
+        <p>
+          <img class='centered' style='height: 152px' src='assets/images/header3.png'>
+        </p>
+        <ul>
+          <li>Two calls to action: Like and Follow</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Case for 4th group
+        </h3>
+        <p>
+          <img class='centered' style='height: 152px' src='assets/images/header4.png'>
+        </p>
+        <ul>
+          <li>Unique call to action: Direct link to Channel (previous iteration case)</li>
+        </ul>
+      </article>
+      
+      <article>
+        <p>
+          <img class='centered' style='width: 100%' src='assets/images/bottom.png'>
+        </p>
+      </article>
+      
+      <article>
+        <h1>Updates and Improvements</h1>
+      </article>
+      
+      <article>
+        <h3>
+          Recent Followers
+        </h3>
+        <p>
+          <img class='centered' style='height: 512px' src='assets/images/recentfollowers.png'>
+        </p>
+      </article>
+      
+      <article>
+        <h3>
+          Comment count and poll icons
+        </h3>
+        <p>
+          <img class='centered' style='height: 477px' src='assets/images/commentcount.png'>
+        </p>
+      </article>
+      
+      <article>
+        <h3>
+          Fallback page for Series and People
+        </h3>
+        <p>
+          <img class='centered' style='width: 100%' src='assets/images/underconstruction.png'>
+        </p>
+      </article>
+      
+      <article>
+        <h3>
+          Other improvements
+        </h3>
+        <ul>
+          <li>Channel page and gestures now work on iOS devices</li>
+          <li>Users can now Unfollow from the same button they use to Follow</li>
+          <li>Notifications should now work fine</li>
+          <li>Added a "Load more" button for the notifications' list</li>
+          <li>Fixed Facebook auto-login</li>
+          <li>Fixed Logging in... text when users do not accept extra permissions</li>
+          <li>Fixed video rendering</li>
+          <li>Fixed images width overflowing in the stories</li>
+          <li>Content team: some more channels added &amp; updated images</li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Have a nice weekend!
+        </h1>
+        <p>
+          Luis Merino
+          <br>
+          April 20, 2012
+        </p>
+      </article>
+      
+   <!--       <article>
+           <p>
+             This is a slide with just text. This is a slide with just text.
+             This is a slide with just text. This is a slide with just text.
+             This is a slide with just text. This is a slide with just text.
+           </p>
+           <p>
+             There is more text just underneath.
+           </p>
+         </article>
+
+         <article>
+           <h3>
+             Simple slide with header and text
+           </h3>
+           <p>
+             This is a slide with just text. This is a slide with just text.
+             This is a slide with just text. This is a slide with just text.
+             This is a slide with just text. This is a slide with just text.
+           </p>
+           <p>
+             There is more text just underneath with a <code>code sample: 5px</code>.
+           </p>
+         </article>
+
+         <article class='smaller'>
+           <h3>
+             Simple slide with header and text (small font)
+           </h3>
+           <p>
+             This is a slide with just text. This is a slide with just text.
+             This is a slide with just text. This is a slide with just text.
+             This is a slide with just text. This is a slide with just text.
+           </p>
+           <p>
+             There is more text just underneath with a <code>code sample: 5px</code>.
+           </p>
+         </article>
+
+         <article>
+           <h3>
+             Slide with bullet points and a longer title, just because we
+             can make it longer
+           </h3>
+           <ul>
+             <li>
+               Use this template to create your presentation
+             </li>
+             <li>
+               Use the provided color palette, box and arrow graphics, and
+               chart styles
+             </li>
+             <li>
+               Instructions are provided to assist you in using this
+               presentation template effectively
+             </li>
+             <li>
+               At all times strive to maintain Google's corporate look and feel
+             </li>
+           </ul>
+         </article>
+
+         <article>
+           <h3>
+             Slide with bullet points that builds
+           </h3>
+           <ul class="build">
+             <li>
+               This is an example of a list
+             </li>
+             <li>
+               The list items fade in
+             </li>
+             <li>
+               Last one!
+             </li>
+           </ul>
+
+           <div class="build">
+             <p>Any element with child nodes can build.</p>
+             <p>It doesn't have to be a list.</p>
+           </div>
+         </article>
+
+         <article class='smaller'>
+           <h3>
+             Slide with bullet points (small font)
+           </h3>
+           <ul>
+             <li>
+               Use this template to create your presentation
+             <li>
+               Use the provided color palette, box and arrow graphics, and
+               chart styles
+             <li>
+               Instructions are provided to assist you in using this
+               presentation template effectively
+             <li>
+               At all times strive to maintain Google's corporate look and feel
+           </ul>
+         </article>
+
+         <article>
+           <h3>
+             Slide with a table
+           </h3>
+           
+           <table>
+             <tr>
+               <th>
+                 Name
+               <th>
+                 Occupation
+             <tr>
+               <td>
+                 Luke Mahé
+               <td>
+                 V.P. of Keepin’ It Real
+             <tr>
+               <td>
+                 Marcin Wichary
+               <td>
+                 The Michael Bay of Doodles
+           </table>
+         </article>
+         
+         <article class='smaller'>
+           <h3>
+             Slide with a table (smaller text)
+           </h3>
+           
+           <table>
+             <tr>
+               <th>
+                 Name
+               <th>
+                 Occupation
+             <tr>
+               <td>
+                 Luke Mahé
+               <td>
+                 V.P. of Keepin’ It Real
+             <tr>
+               <td>
+                 Marcin Wichary
+               <td>
+                 The Michael Bay of Doodles
+           </table>
+         </article>
+         
+         <article>
+           <h3>
+             Styles
+           </h3>
+           <ul>
+             <li>
+               <span class='red'>class="red"</span>
+             <li>
+               <span class='blue'>class="blue"</span>
+             <li>
+               <span class='green'>class="green"</span>
+             <li>
+               <span class='yellow'>class="yellow"</span>
+             <li>
+               <span class='black'>class="black"</span>
+             <li>
+               <span class='white'>class="white"</span>
+             <li>
+               <b>bold</b> and <i>italic</i>
+           </ul>
+         </article>
+         
+         <article>
+           <h2>
+             Segue slide
+           </h2>
+         </article>
+
+         <article>
+           <h3>
+             Slide with an image
+           </h3>
+           <p>
+             <img style='height: 500px' src='images/example-graph.png'>
+           </p>
+           <div class='source'>
+             Source: Sergey Brin
+           </div>
+         </article>
+
+         <article>
+           <h3>
+             Slide with an image (centered)
+           </h3>
+           <p>
+             <img class='centered' style='height: 500px' src='images/example-graph.png'>
+           </p>
+           <div class='source'>
+             Source: Larry Page
+           </div>
+         </article>
+
+         <article class='fill'>
+           <h3>
+             Image filling the slide (with optional header)
+           </h3>
+           <p>
+             <img src='images/example-cat.jpg'>
+           </p>
+           <div class='source white'>
+             Source: Eric Schmidt
+           </div>
+         </article>
+
+         <article>
+           <h3>
+             This slide has some code
+           </h3>
+           <section>
+           <pre>
+   &lt;script type='text/javascript'&gt;
+     // Say hello world until the user starts questioning
+     // the meaningfulness of their existence.
+     function helloWorld(world) {
+       for (var i = 42; --i &gt;= 0;) {
+         alert('Hello ' + String(world));
+       }
+     }
+   &lt;/script&gt;
+   &lt;style&gt;
+     p { color: pink }
+     b { color: blue }
+     u { color: 'umber' }
+   &lt;/style&gt;
+   </pre>
+           </section>
+         </article>
+         
+         <article class='smaller'>
+           <h3>
+             This slide has some code (small font)
+           </h3>
+           <section>
+           <pre>
+   &lt;script type='text/javascript'&gt;
+     // Say hello world until the user starts questioning
+     // the meaningfulness of their existence.
+     function helloWorld(world) {
+       for (var i = 42; --i &gt;= 0;) {
+         alert('Hello ' + String(world));
+       }
+     }
+   &lt;/script&gt;
+   &lt;style&gt;
+     p { color: pink }
+     b { color: blue }
+     u { color: 'umber' }
+   &lt;/style&gt;
+   </pre>
+           </section>
+         </article>
+         
+         <article>
+           <q>
+             The best way to predict the future is to invent it.
+           </q>
+           <div class='author'>
+             Alan Kay
+           </div>
+         </article>
+         
+         <article class='smaller'>
+           <q>
+             A distributed system is one in which the failure of a computer 
+             you didn’t even know existed can render your own computer unusable.
+           </q>
+           <div class='author'>
+             Leslie Lamport
+           </div>
+         </article>
+         
+         <article class='nobackground'>
+           <h3>
+             A slide with an embed + title
+           </h3>
+           
+           <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+         </article>
+
+         <article class='nobackground'>
+           <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+         </article>
+
+         <article class='fill'>
+           <h3>
+             Full-slide embed with (optional) slide title on top
+           </h3>
+           <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+         </article>
+         
+         <article>
+           <h3>
+             Thank you!
+           </h3>
+           
+           <ul>
+             <li>
+               <a href='http://www.google.com'>google.com</a>
+           </ul>
+         </article> -->
+   
+    </section>
+
+  </body>
+</html>
